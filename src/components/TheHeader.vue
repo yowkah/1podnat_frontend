@@ -1,12 +1,22 @@
 <template>
-  <h1>Header</h1>
+  <div class="flex justify-between items-center p-3">
+    <h1 class="text-2xl font-semibold">1PodNat</h1>
+    <base-button label="Sign In" @click="onClick" />
+  </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import BaseButton from "@/components/BaseButton.vue";
+import { Options, Vue } from "vue-class-component";
 
 @Options({
-  components: {},
+  components: {
+    BaseButton,
+  },
 })
-export default class TheHeader extends Vue {}
+export default class TheHeader extends Vue {
+  onClick() {
+    this.$router.push("/signin");
+  }
+}
 </script>
